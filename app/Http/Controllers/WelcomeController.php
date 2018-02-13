@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\User;
+
 class WelcomeController extends Controller
 {
     /**
@@ -16,6 +18,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $users = User::orderBy('updated_at', 'desc')->paginate(1);
+        return view('welcome', [
+            'users' => $users,
+            ]);
     }
 }
