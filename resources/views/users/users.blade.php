@@ -4,7 +4,7 @@
     <li class="media">
         <div class="media-left">
             <div>
-                {{ $user->name }}
+                <p>{!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}</p>
             </div>
             <div>
                 {{ $user->comment }}
@@ -21,7 +21,7 @@
                 <p>{!! link_to_route('users.show', 'view profile', ['id' => $user->id]) !!}</p>
             </div>
             <div>
-                <a href="#">Talk!!</a>
+                <p>{!! link_to_route('messages.index', 'Talk!', ['id' => $user->id]) !!}</p>
             </div>
         </div>
     </li>

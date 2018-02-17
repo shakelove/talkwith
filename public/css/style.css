@@ -7,20 +7,35 @@ body {
 footer {
     margin-top: 40px;
 }
+a {
+    text-decoration: none;
+}
 
 /* navbar */
 .navbar {
     background-color: #fff;
-}
-.navbar-header a {
-    margin-top: 5px;
-    height: 40px;
+    height: 50px;
 }
 
+.navbar-header a {
+    margin-top: 15px;
+    height: 40px;
+    text-decoration: none;
+}
+.navbar-left {
+    color: black;
+    font-size: 20px;
+}
+.navbar-right {
+    margin-right: 80px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: black;
+    font-size: 16px;
+}
 /* cover */
 .cover {
     margin-top: -20px;
-    margin-bottom: 20px;
     width: 100%;
     height: 300px;
     /*background: url("/images/cover-bg.jpg") center center no-repeat;*/
@@ -47,4 +62,42 @@ footer {
 .cover .btn-success {
     background-color: #ed486f;
     border-color: #ed486f;
+}
+.cover .btn-success a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.media-list {
+    margin-top: 30px;
+}
+
+
+.talk-box {
+    width: 80%;
+    height: 100px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    background-color:#fff;
+    margin:5px;
+    border-radius:7px;
+    -moz-box-shadow:0 2px 2px 0 rgba(0,0,0,0.2);
+    -webkit-box-shadow:0 2px 2px 0 rgba(0,0,0,0.2);
+    box-shadow:0 0px 5px 0 rgba(0,0,0,0.2);
+}
+
+.talk-box p {
+    margin: 10px;
+}
+
+.talk-left {
+    float: left;
+
+}
+
+.talk-right {
+    float: right;
+}
+
+.talk-box p:nth-child(2) {
+    margin-left: 20px;
 }

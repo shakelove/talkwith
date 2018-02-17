@@ -15,7 +15,7 @@
         <div class="cover-inner">
             <div class="cover-contents">
                 <h1>英語で話す</h1>
-                <a href="" class="btn btn-success btn-lg">Talk withを始める</a>
+                <p class="btn btn-success btn-lg">{!! link_to_route('signup.get', 'Talk withを始める') !!}</p>
             </div>
         </div>
     </div>
