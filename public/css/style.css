@@ -72,6 +72,8 @@ a {
     margin-top: 30px;
 }
 
+/*talk*/
+
 
 .talk-box {
     width: 80%;
@@ -102,3 +104,32 @@ a {
     margin-left: 20px;
 }
 
+/*user page*/
+
+.panel-default>.panel-heading {
+    background-color: #fff;
+}
+
+.panel-title {
+    display: inline;
+}
+
+.list-group-item-heading {
+    background-color: #cccccc;
+}
+
+#comment.list-group-item-text {
+    font-size: 18px;
+    height: 40px;
+}
+
+#aboutme.list-group-item-text {
+    font-size: 16px;
+    height: 400px;
+}
+
+
+
+.level {
+    float: right;
+}

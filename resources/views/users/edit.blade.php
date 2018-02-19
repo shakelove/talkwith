@@ -14,9 +14,9 @@
         
         {!! Form::label('level', 'English level:') !!}
         {!! Form::select('level', [
-                        'beginner' => 'Beginner',
-                        'intermediate' => 'Intermediate',
-                        'expert' => 'Expert']) !!}
+                        'Beginner' => 'Beginner',
+                        'Intermediate' => 'Intermediate',
+                        'Expert' => 'Expert']) !!}
 
         {!! Form::submit('Update') !!}
 
