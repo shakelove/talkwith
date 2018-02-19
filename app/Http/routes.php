@@ -22,7 +22,7 @@ Route::get('login', 'Auth\AuthController@getLogin')->name('login.get');
 Route::post('login', 'Auth\AuthController@postLogin')->name('login.post');
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 
-Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update']]);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('messages', 'MessagesController', ['only' => ['index', 'store']]);

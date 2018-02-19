@@ -2,17 +2,41 @@
 
 @section('content')
     <div class="row">
-        <aside class="col-xs-4">
+        <aside class="col-xs-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{ $user->name }}</h3>
                 </div>
-                <div class="panel-body">
-                <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->email, 500) }}" alt="">
+                <div class="list-group">
+                    <h3 class="list-group-item-heading">
+                        ○ A comment
+                    </h3>
+                    <p class="list-group-item-text">
+                        @if (count($user->comment) > 0)
+                            {{ $user->comment }}
+                        @endif
+                    </p>
+                </div>
+                <div class="list-group">
+                    <h3 class="list-group-item-heading">
+                        ○ About me
+                    </h3>
+                    <p class="list-group-item-text">
+                         @if (count($user->aboutme) > 0)
+                            {{ $user->aboutme }}
+                        @endif
+                    </p>
                 </div>
             </div>
+            <div class="panel-footer">
+                @if (Auth::user()->id == $user->id)
+	            	{!! link_to_route('users.edit', 'Edit about me', ['id' => $user->id]) !!}
+	        	@else
+	            	<a>Talk!!</a>
+	        	@endif
+        	</div>
         </aside>
-        <div class="col-xs-8">
+        <div class="col-xs-6">
             <ul class="nav nav-tabs nav-justified">
                 <li><a href="#">Send</a></li>
                 <li><a href="#">Receive</a></li>
