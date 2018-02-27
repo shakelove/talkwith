@@ -46,4 +46,56 @@ class User extends Model implements AuthenticatableContract,
     {
          return $this->hasMany(Message::class, 'to_id');
     }
+    
+    public function thankings()
+    {
+        return $this->belongsToMany(User::class, 'user_thanks', 'user_id', 'thanks_id')->withTimestamps();
+    }
+    
+    public function thankers()
+    {
+        return $this->belongsToMany(User::class, 'user_thanks', 'thanks_id', 'user_id')->withTimestamps();
+    }
+    
+    
+    public function thanks($userId) { // 既にフォローしているかの確認 
+
+$exist = $this->is_thanking($userId); // 自分自身ではないかの確認 
+
+$its_me = $this->id == $userId;
+
+    if ($exist || $its_me) {
+
+
+        return false;
+
+    } else {
+
+        $this->thankings()->attach($userId);
+
+        return true;
+
+    }
+}
+
+public function unthanks($userId)
+{
+    
+    $exist = $this->is_thanking($userId);
+    
+    $its_me = $this->id == $userId;
+
+    if ($exist && !$its_me) {
+        
+        $this->thankings()->detach($userId);
+        return true;
+    } else {
+        
+        return false;
+    }
+}
+
+    public function is_thanking($userId) {
+        return $this->thankings()->where('thanks_id', $userId)->exists();
+    }
 }

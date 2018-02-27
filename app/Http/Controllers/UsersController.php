@@ -14,10 +14,16 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        $thankings = $user->thankings()->paginate(6);
         
-        return view('users.show', [
+        $data = [
             'user' => $user,
-        ]);
+            'users' => $thankings,
+        ];
+        
+        $data += $this->counts($user);
+        
+        return view('users.show', $data);
     }
     
     public function edit($id) {
@@ -32,10 +38,10 @@ class UsersController extends Controller
     public function update(Request $request, $id) {
         
         $this->validate($request, [
-            'comment' => 'max:60',
+            'comment' => 'max:40',
             'aboutme' => 'max:1600',
         ]);
-        
+
         $user = User::find($id);
         $user->comment = $request->comment;
         $user->aboutme = $request->aboutme;
@@ -43,5 +49,35 @@ class UsersController extends Controller
         $user->save();
         
         return redirect('/');
+    }
+    
+//   public function thankings($id)
+//     {
+//         $user = User::find($id);
+//         $thankings = $user->thankings()->paginate(3);
+        
+//         $data = [
+//             'user' => $user,
+//             'users' => $thankings,
+//         ];
+        
+//         $data += $this->counts($user);
+        
+//         return view('users.thankings', $data);
+//     }
+    
+    public function thankers($id)
+    {
+        $user = User::find($id);
+        $thankers = $user->thankers()->paginate(6);
+        
+        $data = [
+            'user' => $user,
+            'users' => $thankers,
+        ];
+        
+        $data += $this->counts($user);
+        
+        return view('users.thankers', $data);
     }
 }

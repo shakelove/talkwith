@@ -2,23 +2,25 @@
 
 @section('content')
 
-    <h1>id: {{ $user->id }} のメッセージ編集ページ</h1>
-
     {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'put']) !!}
 
-        {!! Form::label('comment', 'A comment:') !!}
-        {!! Form::textarea('comment') !!}
-        
-        {!! Form::label('aboutme', 'About me:') !!}
-        {!! Form::textarea('aboutme') !!}
-        
-        {!! Form::label('level', 'English level:') !!}
-        {!! Form::select('level', [
-                        'Beginner' => 'Beginner',
-                        'Intermediate' => 'Intermediate',
-                        'Expert' => 'Expert']) !!}
+        <div class="form-group">
+            {!! Form::label('comment', 'A comment:') !!}
+            {!! Form::textarea('comment', null, ['rows' => 2,'cols' => 30]) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('aboutme', 'About me:') !!}
+            {!! Form::textarea('aboutme', null, ['rows' => 15,'cols' => 100]) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('level', 'English level:') !!}
+            {!! Form::select('level', [
+                            'Beginner' => 'Beginner',
+                            'Intermediate' => 'Intermediate',
+                            'Expert' => 'Expert']) !!}
+        </div>
 
-        {!! Form::submit('Update') !!}
+        {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
 
     {!! Form::close() !!}
 

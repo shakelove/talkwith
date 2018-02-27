@@ -2,6 +2,20 @@
 
 @section('content')
 
+<div class="message-bar">
+    @if (Auth::user()->id != $user->id) 
+    @if (Auth::user()->is_thanking($user->id))
+        {!! Form::open(['route' => ['user.unthanks', $user->id], 'method' => 'delete']) !!}
+            {!! Form::submit('mistake', ['class' => "btn btn-danger btn-block"]) !!}
+        {!! Form::close() !!}
+    @else
+        {!! Form::open(['route' => ['user.thanks', $user->id]]) !!}
+            {!! Form::submit('Thanks', ['class' => "btn btn-primary btn-block"]) !!}
+        {!! Form::close() !!}
+    @endif
+@endif
+</div>
+
 @if (count($messages) > 0)
     <ul class="media-list">
             

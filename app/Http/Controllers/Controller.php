@@ -10,4 +10,14 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 abstract class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+    public function counts($user) {
+        $count_thankings = $user->thankings()->count();
+        $count_thankers = $user->thankers()->count();
+        
+        return [
+            'count_thankings' => $count_thankings,
+            'count_thankers' => $count_thankers,
+        ];
+    }
 }

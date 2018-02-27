@@ -10,6 +10,9 @@ footer {
 a {
     text-decoration: none;
 }
+label {
+    font-size: 20px;
+}
 
 /* navbar */
 .navbar {
@@ -68,10 +71,6 @@ a {
     text-decoration: none;
 }
 
-.media-list {
-    margin-top: 30px;
-}
-
 /*talk*/
 
 
@@ -106,21 +105,36 @@ a {
 
 /*user page*/
 
+/*left*/
+
 .panel-default>.panel-heading {
     background-color: #fff;
+    overflow: hidden;
 }
 
 .panel-title {
     display: inline;
+    font-size: 22px;
+    background-color: #eeeeee;
+}
+
+.level {
+    font-size: 16px;
+     background-color: #eeeeee;
 }
 
 .list-group-item-heading {
     background-color: #cccccc;
 }
 
+.list-group-item-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 #comment.list-group-item-text {
-    font-size: 18px;
-    height: 40px;
+    font-size: 16px;
+    height: 30px;
 }
 
 #aboutme.list-group-item-text {
@@ -128,8 +142,87 @@ a {
     height: 400px;
 }
 
+.button {
+    text-align: center;
+}
+
+.button a {
+    font-size: 20px;
+}
 
 
 .level {
     float: right;
 }
+
+/*right*/
+
+li.media {
+    margin-left: 60px;
+    
+}
+
+.talk-button-right {
+    float: right;
+    margin-right: 240px;
+}
+
+.user-name-left {
+    font-size: 18px;
+    
+}
+
+/*user 一覧*/
+
+.row {
+    margin-top: 25px;
+}
+
+.user-index {
+    height: 157.6px;
+}
+
+.panel-heading-right {
+    display: inline;
+    float: right;
+}
+
+.panel-title-user {
+    display: inline;
+    font-size: 20px;
+}
+
+.thanks {
+    display: inline;
+    margin-left: 20px;
+    border-bottom: 1px dashed;
+}
+
+.level-user {
+    border-bottom: 1px dashed;
+}
+
+.comment-user {
+    width: 100px;
+}
+
+.panel-body {
+    overflow: hidden;
+    margin: 0;
+    
+}
+.panel-body-right {
+    margin-top: 15px;
+    float: right;
+}
+.talk-button {
+    margin-right: 10px;
+    margin-left: 15px;
+}
+.comment {
+    font-size: 16px;
+}
+.paginate {
+    text-align: center;
+}
+
