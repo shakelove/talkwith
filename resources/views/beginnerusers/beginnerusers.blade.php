@@ -45,4 +45,3 @@
 {!! $users->render() !!}
 </div>
 @endif
-

@@ -36,7 +36,17 @@
 	            	{!! link_to_route('users.edit', 'Edit about me', ['id' => $user->id], ['class' => 'btn btn-success']) !!}
 	        	@else
     	        	
-    	            	{!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-danger']) !!}
+    	            @if (Auth::check())
+                       @if (Auth::user()->id != $user->id) 
+                            @if (Auth::user()->is_thanking($user->id))
+                                <span class="talk-button"> {!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-danger']) !!} </span>
+                            @else
+                                {!! Form::open(['route' => ['user.thanks', $user->id]]) !!}
+                                    {!! Form::submit('Talk!', ['class' => "btn btn-danger btn-block"]) !!}
+                                {!! Form::close() !!}
+                            @endif
+                        @endif
+                    @endif
     	            
 	        	@endif
         	</div>

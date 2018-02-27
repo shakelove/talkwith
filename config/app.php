@@ -197,6 +197,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
+        'Pusher' => Pusher\Pusher::class,
 
     ],
 

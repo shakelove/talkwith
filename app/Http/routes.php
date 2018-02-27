@@ -22,7 +22,6 @@ Route::get('login', 'Auth\AuthController@getLogin')->name('login.get');
 Route::post('login', 'Auth\AuthController@postLogin')->name('login.post');
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 
-// Route::resource('users', 'UsersController', ['only' => ['index']]);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('messages', 'MessagesController', ['only' => ['index', 'store']]);
@@ -30,7 +29,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'users/{id}'], function () { 
         Route::post('thanks', 'UserThanksController@store')->name('user.thanks');
         Route::delete('unthanks', 'UserThanksController@destroy')->name('user.unthanks');
-        // Route::get('thankings', 'UsersController@thankings')->name('users.thankings');
         Route::get('thankers', 'UsersController@thankers')->name('users.thankers');
     });
 });

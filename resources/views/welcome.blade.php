@@ -6,7 +6,7 @@
         <div class="cover-inner">
             <div class="cover-contents">
                 <h1>英語で話す</h1>
-                <a href="" class="btn btn-success btn-lg">検索</a>
+                <!--<a href="" class="btn btn-success btn-lg">検索</a>-->
             </div>
         </div>
     </div>
