@@ -6,18 +6,18 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{ $user->name }}</h3>
-                    @if (count($user->level) > 0)
+                    
                     <span class="level">{{ $user->level }}</span>
-                    @endif
+                    
                 </div>
                 <div class="list-group">
                     <h3 class="list-group-item-heading">
                         ○ A comment
                     </h3>
                     <p class="list-group-item-text" id="comment">
-                        @if (count($user->comment) > 0)
+                        
                             {{ $user->comment }} 
-                        @endif
+                        
                     </p>
                 </div>
                 <div class="list-group">
@@ -25,9 +25,9 @@
                         ○ About me
                     </h3>
                     <p class="list-group-item-text" id="aboutme">
-                         @if (count($user->aboutme) > 0)
+                         
                             {{ $user->aboutme }}
-                        @endif
+                        
                     </p>
                 </div>
             </div>
