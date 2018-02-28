@@ -7,9 +7,9 @@
                 <div class="panel-heading">
                     <h4 class="panel-title-user">{{ $user->name }}</h4>
                     <div class="panel-heading-right">
-                        @if (count($user->level) > 0)
+                        
                         <span class="level-user">{{ $user->level }}</span>
-                        @endif
+                        
                         
                     </div>
                     
