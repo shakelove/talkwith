@@ -19,8 +19,11 @@ class WelcomeController extends Controller
     public function index()
     {
         $users = User::orderBy('updated_at', 'desc')->paginate(4);
-        return view('welcome', [
+        
+        $data = [
             'users' => $users,
-            ]);
+        ];
+        
+        return view('welcome', $data);
     }
 }
