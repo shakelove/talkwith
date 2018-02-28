@@ -13,6 +13,14 @@
                     {!! Form::label('name', 'Name') !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                 </div>
+                
+                <div class="form-group">
+                    {!! Form::label('level', 'English level') !!}
+                    {!! Form::select('level', [
+                            'Beginner' => 'Beginner',
+                            'Intermediate' => 'Intermediate',
+                            'Expert' => 'Expert'], ['class' => 'form-conrtol']) !!}
+                </div>
 
                 <div class="form-group">
                     {!! Form::label('email', 'Email') !!}
