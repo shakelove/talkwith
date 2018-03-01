@@ -13,6 +13,9 @@ a {
 label {
     font-size: 20px;
 }
+p {
+    margin: 0;
+}
 
 /* navbar */
 .navbar {
@@ -178,12 +181,12 @@ li.media {
     margin-top: 25px;
 }
 
-.user-index {
-    height: 157.6px;
+.panel-default {
+    height: 191px;
 }
 
 .panel-heading-right {
-    display: inline;
+    /*display: inline;*/
     float: right;
 }
 
@@ -205,16 +208,21 @@ li.media {
 
 .comment-user {
     width: 100px;
+    height: 22.73px;
 }
 
 .panel-body {
     overflow: hidden;
     margin: 0;
+    height: 146px;
     
 }
 .panel-body-right {
     margin-top: 15px;
     float: right;
+}
+.profile > a  {
+    margin-bottom: 10px;
 }
 .talk-button {
     margin-right: 10px;
