@@ -17,7 +17,7 @@
             {!! Form::select('level', [
                             'Beginner' => 'Beginner',
                             'Intermediate' => 'Intermediate',
-                            'Expert' => 'Expert']) !!}
+                            'Expert' => 'Expert'], ['class' => 'level-edit']) !!}
         </div>
 
         {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}

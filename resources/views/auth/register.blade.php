@@ -19,7 +19,7 @@
                     {!! Form::select('level', [
                             'Beginner' => 'Beginner',
                             'Intermediate' => 'Intermediate',
-                            'Expert' => 'Expert'], ['class' => 'form-conrtol']) !!}
+                            'Expert' => 'Expert'], ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">

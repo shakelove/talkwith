@@ -16,6 +16,9 @@ label {
 p {
     margin: 0;
 }
+#level {
+    font-size: 18px;
+}
 
 /* navbar */
 .navbar {
@@ -160,7 +163,7 @@ p {
 
 /*right*/
 
-li.media {
+.media {
     margin-left: 60px;
     
 }
@@ -234,4 +237,8 @@ li.media {
 .paginate {
     text-align: center;
 }
+
+
+
+
 
