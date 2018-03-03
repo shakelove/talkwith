@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <aside class="col-xs-6">
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{ $user->name }}</h3>
                     
@@ -33,10 +33,10 @@
             </div>
             <div class="button">
                 @if (Auth::user()->id == $user->id)
-	            	{!! link_to_route('users.edit', 'Edit about me', ['id' => $user->id], ['class' => 'btn btn-success']) !!}
+	            	{!! link_to_route('users.edit', 'Edit about me', ['id' => $user->id], ['class' => 'btn btn-info']) !!}
 	        	@else
     	        	
-    	            	{!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-danger']) !!}
+    	            	{!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-info']) !!}
     	            
 	        	@endif
         	</div>
@@ -55,7 +55,7 @@
                                 <span class="user-name-left">{{ $user->name }}</span>
                             </div>
                             <div class="media-body">
-                                <span class="talk-button-right"> {!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-danger']) !!} </span>
+                                <span class="talk-button-right"> {!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-info']) !!} </span>
                             </div>
                         </li>
                 @endforeach

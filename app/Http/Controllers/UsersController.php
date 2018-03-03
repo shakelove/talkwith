@@ -39,7 +39,7 @@ class UsersController extends Controller
         
         $this->validate($request, [
             'comment' => 'max:40',
-            'aboutme' => 'max:1600',
+            'aboutme' => 'max:800',
         ]);
 
         $user = User::find($id);
