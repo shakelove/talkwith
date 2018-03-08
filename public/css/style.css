@@ -129,16 +129,16 @@ p {
 .panel-title {
     display: inline;
     font-size: 22px;
-    background-color: #eeeeee;
+    
 }
 
 .level {
     font-size: 16px;
-     background-color: #eeeeee;
+     
 }
 
 .list-group-item-heading {
-    background-color: #cccccc;
+    background-color: #C2EEFF;
 }
 
 .list-group-item-text {
@@ -171,6 +171,8 @@ p {
 
 /*right*/
 
+
+
 .media {
     margin-left: 60px;
     
@@ -190,6 +192,7 @@ p {
 
 .row {
     margin-top: 25px;
+    
 }
 
 

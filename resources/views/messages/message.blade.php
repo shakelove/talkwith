@@ -48,7 +48,7 @@
                     <div class="form-group">
                         {!! Form::hidden('user_id', $user_id->id) !!}
                     </div>
-                    {!! Form::submit('send', ['class' => 'btn btn-primary btn-block']) !!}
+                    {!! Form::submit('send', ['class' => 'btn btn-info btn-block']) !!}
                 {!! Form::close() !!}
     
 
