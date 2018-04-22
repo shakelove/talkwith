@@ -56,6 +56,6 @@
 <script src=&quot;js/app.js&quot;></script>
     <script src=&quot;https://js.pusher.com/3.0/pusher.min.js&quot;></script>
     <script>
-        var pusher = new Pusher(&quot;{{ env('PUSHER_KEY') }}&quot;);
+        var pusher = new Pusher("{{ env('PUSHER_KEY') }}");
     </script>
     <script src=&quot;js/pusher.js&quot;></script>

@@ -2,7 +2,7 @@
 
 var messageActionChannel = pusher.subscribe( 'messageAction' );
 
-messageActionChannel.bind( &quot;App\\Events\\MessageCreated&quot;, function( data ) {
+messageActionChannel.bind( "App\\Events\\MessageCreated", function( data ) {
 
     addMessage( data.id, false );
 } );
