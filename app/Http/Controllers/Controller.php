@@ -13,11 +13,11 @@ abstract class Controller extends BaseController
     
     public function counts($user) {
         $count_thankings = $user->thankings()->count();
-        $count_thankers = $user->thankers()->count();
-        
+        $count_talkers = $user->talkers()->count();
+
         return [
             'count_thankings' => $count_thankings,
-            'count_thankers' => $count_thankers,
+            'count_talkers' => $count_talkers,
         ];
     }
 }

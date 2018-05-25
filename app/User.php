@@ -52,13 +52,13 @@ class User extends Model implements AuthenticatableContract,
         return $this->belongsToMany(User::class, 'user_thanks', 'user_id', 'thanks_id')->withTimestamps();
     }
     
-    public function thankers()
+    public function talkers()
     {
         return $this->belongsToMany(User::class, 'user_thanks', 'thanks_id', 'user_id')->withTimestamps();
     }
     
     
-    public function thanks($userId) { // 既にフォローしているかの確認 
+    public function talks($userId) { // 既にフォローしているかの確認 
 
 $exist = $this->is_thanking($userId); // 自分自身ではないかの確認 
 

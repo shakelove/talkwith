@@ -54,7 +54,7 @@
         <div class="col-xs-6">
             <ul class="nav nav-tabs nav-justified">
                 <li role="presentation" class="{{ Request::is('users/' . $user->id) ? 'active' : '' }}"><a href="{{ route('users.show', ['id' => $user->id]) }}">Talkings <span class="badge">{{ $count_thankings }}</span></a></li>
-                <li role="presentation" class="{{ Request::is('users/*/thankers') ? 'active' : '' }}"><a href="{{ route('users.thankers', ['id' => $user->id]) }}">Talkers <span class="badge">{{ $count_thankers }}</span></a></li>
+                <li role="presentation" class="{{ Request::is('users/*/talkers') ? 'active' : '' }}"><a href="{{ route('users.talkers', ['id' => $user->id]) }}">Talkers <span class="badge">{{ $count_talkers }}</span></a></li>
             </ul>
             
                 @if (count($users) > 0)

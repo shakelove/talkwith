@@ -26,9 +26,14 @@ Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('messages', 'MessagesController', ['only' => ['index', 'store']]);
     Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update']]);
+    
+     
+        Route::post('levels', 'UsersController@levels')->name('levels');
+     
+    
     Route::group(['prefix' => 'users/{id}'], function () { 
-        Route::post('thanks', 'UserThanksController@store')->name('user.thanks');
+        Route::post('talks', 'UserTalksController@store')->name('user.talks');
         Route::delete('unthanks', 'UserThanksController@destroy')->name('user.unthanks');
-        Route::get('thankers', 'UsersController@thankers')->name('users.thankers');
+        Route::get('talkers', 'UsersController@talkers')->name('users.talkers');
     });
 });

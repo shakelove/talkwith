@@ -66,18 +66,36 @@ class UsersController extends Controller
 //         return view('users.thankings', $data);
 //     }
     
-    public function thankers($id)
+    public function talkers($id)
     {
         $user = User::find($id);
-        $thankers = $user->thankers()->paginate(6);
+        $talkers = $user->talkers()->paginate(6);
         
         $data = [
             'user' => $user,
-            'users' => $thankers,
+            'users' => $talkers,
         ];
         
         $data += $this->counts($user);
         
-        return view('users.thankers', $data);
+        return view('users.talkers', $data);
+    }
+    
+    public function levels(Request $request) {
+        
+        
+        
+        $level = $request->level;
+        $users = User::where('level', $level)
+                       ->orderBy('name', 'desc')
+                       ->paginate(6);
+                       
+        
+        $data = [
+            'users' => $users,
+            'level' => $level,
+        ];
+        
+        return view('levels', $data);
     }
 }

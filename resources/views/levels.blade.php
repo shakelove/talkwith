@@ -10,7 +10,6 @@
                 
                 {!! Form::open(['route' => 'levels']) !!}
                 
-                    <!--{!! Form::label('level', 'レベル別で探す') !!}-->
                     {!! Form::select('level', [
                                 'Beginner' => 'Beginner',
                                 'Intermediate' => 'Intermediate',
@@ -35,5 +34,5 @@
 @endsection
 
 @section('content')
-    @include('users.users', ['users' => $users])
+    @include('users.levelusers', ['users' => $users])
 @endsection

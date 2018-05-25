@@ -26,7 +26,7 @@
                             @if (Auth::user()->is_thanking($user->id))
                                 <span class="talk-button"> {!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-info btn-block']) !!} </span>
                             @else
-                                {!! Form::open(['route' => ['user.thanks', $user->id]]) !!}
+                                {!! Form::open(['route' => ['user.talks', $user->id]]) !!}
                                     {!! Form::submit('Talk!', ['class' => "btn btn-info btn-block"]) !!}
                                 {!! Form::close() !!}
                             @endif

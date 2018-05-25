@@ -6,10 +6,10 @@
             <div class="panel panel-default user-index">
                 <div class="panel-heading">
                     <h4 class="panel-title-user">{{ $user->name }}</h4>
-                    <div class="panel-heading-right">
-                        @if (count($user->level) > 0)
+                    <div class="panel-heading-right clearfix">
+                        
                         <span class="level-user">{{ $user->level }}</span>
-                        @endif
+                        
                         
                     </div>
                     
@@ -18,16 +18,16 @@
                     <div class="comment-user">
                         <p class="comment">{{ $user->comment }}</p>
                     </div>
-                    <div class="panel-body-right">
+                    <div class="panel-body-right clearfix">
                        <span class="profile"> {!! link_to_route('users.show', 'view profile', ['id' => $user->id], ['class' => 'btn btn-info']) !!} </span>
                        
                     @if (Auth::check())
                        @if (Auth::user()->id != $user->id) 
                             @if (Auth::user()->is_thanking($user->id))
-                                <span class="talk-button"> {!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-danger']) !!} </span>
+                                <span class="talk-button"> {!! link_to_route('messages.index', 'Talk!', ['id' => $user->id], ['class' => 'btn btn-info btn-block']) !!} </span>
                             @else
-                                {!! Form::open(['route' => ['user.thanks', $user->id]]) !!}
-                                    {!! Form::submit('Talk!', ['class' => "btn btn-danger btn-block"]) !!}
+                                {!! Form::open(['route' => ['user.talks', $user->id]]) !!}
+                                    {!! Form::submit('Talk!', ['class' => "btn btn-info btn-block"]) !!}
                                 {!! Form::close() !!}
                             @endif
                         @endif
@@ -44,4 +44,10 @@
 <div class="paginate">
 {!! $users->render() !!}
 </div>
+@else
+<div class="test">
+    <p>test</p>
+</div>
 @endif
+
+
