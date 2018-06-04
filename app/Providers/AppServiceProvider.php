@@ -20,9 +20,7 @@ class AppServiceProvider extends ServiceProvider
             Event::fire(new MessageCreated($message));
          });
          
-         if (env('USE_HTTPS', false)) {
-            \URL::forceSchema('https');
-        }
+         
     }
 
     /**
