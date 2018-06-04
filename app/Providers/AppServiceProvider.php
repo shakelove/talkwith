@@ -20,7 +20,9 @@ class AppServiceProvider extends ServiceProvider
             Event::fire(new MessageCreated($message));
          });
          
-         
+         if ($this->app->environment() == 'production') {
+          URL::forceScheme('https');
+      }
     }
 
     /**
