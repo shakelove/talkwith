@@ -6,6 +6,7 @@ use Event;
 use Illuminate\Support\ServiceProvider;
 use App\Message;
 use App\Events\MessageCreated;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
