@@ -11,6 +11,10 @@
 |
 */
 
+if (app()->environment('production')) {
+  URL::forceScheme('https');
+}
+
 Route::get('/', 'WelcomeController@index');
 
 // ユーザ登録
