@@ -15,11 +15,7 @@ use Illuminate\Pagination\Paginator;
 
 class MessagesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index(Request $request)
     {
             $me = \Auth::user();
@@ -43,13 +39,11 @@ class MessagesController extends Controller
             $itemsForCurrentPage = array_slice($results, $offSet, $paginate, true);
             $messages = new \Illuminate\Pagination\LengthAwarePaginator($itemsForCurrentPage, count($results), $paginate, $page);
                     
-            // $to_messages = $me->message_to_ids()->orderBy('created_at', 'desc')->paginate(10);
             
             $data = [
                 'user' => $me,
                 'user_id' => $you,
                 'messages' => $messages,
-                // 'to_messages' => $to_messages,
             ];
             
         
@@ -57,22 +51,13 @@ class MessagesController extends Controller
     }
     
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
      //メッセージの保存
     public function store(Request $request)
     {
@@ -91,46 +76,23 @@ class MessagesController extends Controller
         return redirect('/messages?id=' . $request->user_id);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
