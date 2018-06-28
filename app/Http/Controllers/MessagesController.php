@@ -1,5 +1,7 @@
 <?php
 
+//チャットアプリのメッセージ機能のコントローラです。
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
