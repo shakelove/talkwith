@@ -24,7 +24,6 @@ class MessagesController extends Controller
     {
             $me = \Auth::user();
             $you = User::find($request->id);
-            // $messages = $user->message_ids()->orderBy('created_at', 'desc')->paginate(10);
             
             $first = DB::table('messages')
                     ->Where('from_id', '=', $me->id)
@@ -74,6 +73,7 @@ class MessagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+     //メッセージの保存
     public function store(Request $request)
     {
         $user = \Auth::user();
