@@ -177,16 +177,14 @@ p {
 
 .media {
     margin-left: 60px;
-    
+    width: 170px;
 }
 
-.media-body {
-    width: 1000px;
-}
+
 
 .talk-button-right {
     float: right;
-    margin-right: 240px;
+    /*margin-right: 240;*/
 }
 
 .user-name-left {
