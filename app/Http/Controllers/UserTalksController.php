@@ -13,7 +13,7 @@ use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\Paginator;
 
-class UserThanksController extends Controller
+class UserTalksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -78,7 +78,7 @@ class UserThanksController extends Controller
         
         
         
-        \Auth::user()->thanks($id);
+        \Auth::user()->talks($id);
         return view('messages.message', $data);
     }
 
