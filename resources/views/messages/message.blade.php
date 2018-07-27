@@ -43,7 +43,7 @@
 
 {!! Form::open(['route' => 'messages.store']) !!}
                     <div class="form-group">
-                        {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '5']) !!}
+                        {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '5', 'onInput' => 'checkForm(this)']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::hidden('user_id', $user_id->id) !!}
@@ -53,9 +53,22 @@
     
 
 @endsection
-<script src=&quot;js/app.js&quot;></script>
-    <script src=&quot;https://js.pusher.com/3.0/pusher.min.js&quot;></script>
-    <script>
-        var pusher = new Pusher("{{ env('PUSHER_KEY') }}");
-    </script>
-    <script src=&quot;js/pusher.js&quot;></script>
+<script type="text/javascript">
+
+function checkForm($this)
+{
+    var str=$this.value;
+    while(str.match(/[^A-Z^a-z\d\-]/))
+    {
+        str=str.replace(/[^A-Z^a-z\d\-]/,"");
+    }
+    $this.value=str;
+}
+
+</script>
+<!--<script src=&quot;js/app.js&quot;></script>-->
+<!--    <script src=&quot;https://js.pusher.com/3.0/pusher.min.js&quot;></script>-->
+<!--    <script>-->
+<!--        var pusher = new Pusher("{{ env('PUSHER_KEY') }}");-->
+<!--    </script>-->
+<!--    <script src=&quot;js/pusher.js&quot;></script>-->
