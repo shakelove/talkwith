@@ -180,6 +180,10 @@ p {
     
 }
 
+.media-body {
+    width: 1000px;
+}
+
 .talk-button-right {
     float: right;
     margin-right: 240px;

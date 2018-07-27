@@ -38,8 +38,8 @@ class UsersController extends Controller
     public function update(Request $request, $id) {
         
         $this->validate($request, [
-            'comment' => 'max:40',
-            'aboutme' => 'max:800',
+            'comment' => 'max:20',
+            'aboutme' => 'max:100',
         ]);
 
         $user = User::find($id);
