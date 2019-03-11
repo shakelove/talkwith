@@ -34,8 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
      
     
     Route::group(['prefix' => 'users/{id}'], function () { 
-        Route::post('talks', 'UserTalksController@store')->name('user.talks');
-        Route::delete('unthanks', 'UserThanksController@destroy')->name('user.unthanks');
+        Route::post('talks', 'UserTalksController@store')->name('user.talks');  //いらんかも
+        Route::delete('unthanks', 'UserThanksController@destroy')->name('user.unthanks');  //いらん
         Route::get('talkers', 'UsersController@talkers')->name('users.talkers');
     });
 });
